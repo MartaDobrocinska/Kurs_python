@@ -1,0 +1,5 @@
+liczba = input("Podaj liczbę całkowitą: ")
+ilosc_cyfr = len(liczba)
+print("Ilość cyfr:",ilosc_cyfr)
+print("Pierwsza cyfra:",liczba[0])
+print("Ostatnia cyfra:",liczba[-1])
