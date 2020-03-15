@@ -16,5 +16,5 @@ while True:
             print("Nieprawidłowe dane, podaj temperaturę jako wartość liczbową.")
 print('''Wzór na przeliczanie stopni Celsjusza na stopnie Fahrenheita:
 [\u00b0F] = [\u00b0C] * 9/5 + 32''')
-print("Podana temperatura przeliczona na stopnie Fahnrenheita: ", end = "")
+print("Podana temperatura przeliczona na stopnie Fahnrenheita: ", end="")
 cels_to_fahr(float(celsius))
