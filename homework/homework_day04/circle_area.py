@@ -1,7 +1,8 @@
-def circ_area(radius):
+def circ_area(r):
     """calculates the area of a circle with the given radius"""
     pi = 3.14
-    print("P =", pi * radius ** 2)
+    print("P =", pi * r ** 2)
+
 
 while True:
     radius = input("Podaj promień koła: r = ")

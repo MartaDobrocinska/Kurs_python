@@ -1,6 +1,6 @@
-def cels_to_fahr(celsius):
+def cels_to_fahr(cel):
     """converts celsius degrees to fahrenheit"""
-    print(celsius * 9 / 5 + 32)
+    print(cel * 9 / 5 + 32)
 
 
 while True:
