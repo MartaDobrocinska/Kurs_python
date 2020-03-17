@@ -4,4 +4,11 @@ def pyramid(height):
         print(' ' * (height - row - 1) + '#' * (2 * row + 1))
 
 
-pyramid(3)
+while True:
+    rows = (input("Podaj wysokość piramidy: "))
+    try:
+        int(rows)
+        break
+    except ValueError:
+        print("Nieprawidłowe dane, podaj wysokość piramidy jako liczbę całkowitą.")
+pyramid(int(rows))
