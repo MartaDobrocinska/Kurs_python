@@ -1,5 +1,5 @@
 def table(data):
-    """Prints a given list in a table format. Sort of"""
+    """Prints a given list in a table format"""
     longest = len(max(data, key=len))
     top_bottom = ("+" + "-" + ("-" * longest)) * len(data) + "+"
     top_bottom_30 = ("+" + ("-" * 35)) * len(data) + "+"
@@ -20,5 +20,5 @@ def table(data):
         print("|\n" + top_bottom_30)
 
 
-cells = ["86784", "34534567654", "234567"]
+cells = ["2345", "34534567654", "234567"]
 table(cells)
