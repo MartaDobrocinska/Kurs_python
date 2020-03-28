@@ -1,20 +1,17 @@
-def fahr_to_cels(f):
+def fahr_to_cels():
     """converts fahrenheit degrees to celsius"""
-    print(f * 9 / 5 + 32)
-
-
-while True:
-    fahrenheit = input("Podaj temperaturę w stopniach Fahrenheita: ")
-    try:
-        int(fahrenheit)
-        break
-    except ValueError:
+    while True:
+        f = input("Podaj temperaturę w stopniach Fahrenheita: ")
         try:
-            float(fahrenheit)
+            int(f)
             break
         except ValueError:
-            print("Nieprawidłowe dane, podaj temperaturę jako wartość liczbową.")
-print('''Wzór na przeliczanie stopni Fahrenheita na stopnie Celsjusza:
-[\u00b0C] = ([\u00b0F] - 32) / 1.8''')
-print("Podana temperatura przeliczona na stopnie Celsjusza: ", end="")
-fahr_to_cels(float(fahrenheit))
+            try:
+                float(f)
+                break
+            except ValueError:
+                print("Nieprawidłowe dane, podaj temperaturę jako wartość liczbową.")
+    print('''Wzór na przeliczanie stopni Fahrenheita na stopnie Celsjusza:
+    [\u00b0C] = ([\u00b0F] - 32) / 1.8''')
+    print("Podana temperatura przeliczona na stopnie Celsjusza: ", end="")
+    print(float(f) * 9 / 5 + 32)

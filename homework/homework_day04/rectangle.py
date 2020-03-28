@@ -1,24 +1,21 @@
-def rectangle(width, height):
+def rectangle():
     """Draws a rectangle of a given height and width"""
-    print("+" + ("-" * width) + "+")
-    middle = "|" + (" " * width) + "|\n"
-    for user in range(0, height):
+    while True:
+        width = (input("Podaj szerokość prostokąta: "))
+        try:
+            int(width)
+            break
+        except ValueError:
+            print("Nieprawidłowe dane, podaj szerokość prostokąta jako liczbę całkowitą.")
+    while True:
+        height = (input("Podaj wysokość prostokąta: "))
+        try:
+            int(height)
+            break
+        except ValueError:
+            print("Nieprawidłowe dane, podaj wysokość prostokąta jako liczbę całkowitą.")
+    print("+" + ("-" * int(width)) + "+")
+    middle = "|" + (" " * int(width)) + "|\n"
+    for user in range(0, int(height)):
         print(middle, end="")
-    print("+" + ("-" * width) + "+")
-
-
-while True:
-    user_width = (input("Podaj szerokość prostokąta: "))
-    try:
-        int(user_width)
-        break
-    except ValueError:
-        print("Nieprawidłowe dane, podaj szerokość prostokąta jako liczbę całkowitą.")
-while True:
-    user_height = (input("Podaj wysokość prostokąta: "))
-    try:
-        int(user_height)
-        break
-    except ValueError:
-        print("Nieprawidłowe dane, podaj wysokość prostokąta jako liczbę całkowitą.")
-rectangle(int(user_width), int(user_height))
+    print("+" + ("-" * int(width)) + "+")

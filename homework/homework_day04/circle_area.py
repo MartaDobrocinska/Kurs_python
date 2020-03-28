@@ -1,20 +1,17 @@
-def circ_area(r):
+def circ_area():
     """calculates the area of a circle with the given radius"""
-    pi = 3.14
-    print("P =", pi * r ** 2)
-
-
-while True:
-    radius = input("Podaj promień koła: r = ")
-    try:
-        int(radius)
-        break
-    except ValueError:
+    while True:
+        radius = input("Podaj promień koła: r = ")
         try:
-            float(radius)
+            int(radius)
             break
         except ValueError:
-            print("Nieprawidłowe dane, podaj promień jako wartość liczbową.")
-print('''Wzór na pole powierzchni koła:
-P = \u03C0 * r\N{SUPERSCRIPT TWO}''')
-circ_area(float(radius))
+            try:
+                float(radius)
+                break
+            except ValueError:
+                print("Nieprawidłowe dane, podaj promień jako wartość liczbową.")
+    print('''Wzór na pole powierzchni koła:
+    P = \u03C0 * r\N{SUPERSCRIPT TWO}''')
+    pi = 3.14
+    print("P =", pi * float(radius) ** 2)

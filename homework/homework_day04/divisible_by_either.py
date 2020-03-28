@@ -1,25 +1,21 @@
-def div_by_either(dividend, divisors):
+def div_by_either():
     """checks whether a number is divisible by any of the 3 given numbers"""
-    if dividend % divisors[0] == 0:
-        print("Podana liczba jest podzielna przez ", divisors[0])
-    if dividend % divisors[1] == 0:
-        print("Podana liczba jest podzielna przez ", divisors[1])
-    if dividend % divisors[2] == 0:
-        print("Podana liczba jest podzielna przez ", divisors[2])
-    if dividend % divisors[0] != 0 and dividend % divisors[1] != 0 and dividend % divisors[2] != 0:
-        print("Podana liczba nie jest podzielna przez ", divisors)
-
-
-while True:
-    number = (input("Podaj liczbę: "))
-    try:
-        int(number)
-        break
-    except ValueError:
+    while True:
+        number = (input("Podaj liczbę: "))
         try:
-            float(number)
+            int(number)
             break
         except ValueError:
-            print("Nieprawidłowe dane, podaj wartość liczbową.")
-divisors_list = [3, 5, 7]
-div_by_either(float(number), divisors_list)
+            try:
+                float(number)
+                break
+            except ValueError:
+                print("Nieprawidłowe dane, podaj wartość liczbową.")
+    if float(number) % 3 == 0:
+        print("Podana liczba jest podzielna przez 3.")
+    if float(number) % 5 == 0:
+        print("Podana liczba jest podzielna przez 5.")
+    if float(number) % 7 == 0:
+        print("Podana liczba jest podzielna przez 7.")
+    if float(number) % 3 != 0 and float(number) % 5 != 0 and float(number) % 7 != 0:
+        print("Podana liczba nie jest podzielna przez 3, 5 ani 7.")
