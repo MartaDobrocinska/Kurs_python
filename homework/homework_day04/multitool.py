@@ -12,6 +12,7 @@ import homework.homework_day04.divisible_by_either as div_either
 import homework.homework_day04.divisible_by_all as div_all
 import homework.homework_day04.leap_year as leap
 import homework.homework_day04.dog as dog
+import homework.homework_day06.data_import as data_import
 
 
 def exit_multi():
@@ -37,7 +38,7 @@ funkcje = {'1':  {'nazwa': 'Rysowanie prostokąta o zadanych parametrach', 'call
            '3':  {'nazwa': 'Rozmienianie pieniędzy', 'call': change.change},
            '4':  {'nazwa': 'Przeliczanie stopni Fahrenheita na Celsjusza', 'call': f_to_c.fahr_to_cels},
            '5':  {'nazwa': 'Przeliczanie stopni Celsjusza na Fahrenheita', 'call': c_to_f.cels_to_fahr},
-           '6':  {'nazwa': 'Przeliczanie liczby z systemu binarnego na dziesiętny', 'call': bi_to_dec.lists_merge},
+           '6':  {'nazwa': 'Przeliczanie liczby z systemu binarnego na dziesiętny', 'call': bi_to_dec.binary},
            '7':  {'nazwa': 'Kalkulator pola powierzchni koła', 'call': circle.circ_area},
            '8':  {'nazwa': 'Liczba parzysta czy nieparzysta?', 'call': even_odd.even_odd},
            '9':  {'nazwa': 'Znajdź pierwszą i ostatnią cyfrę podanej liczby', 'call': first_last.first_last},
@@ -45,6 +46,7 @@ funkcje = {'1':  {'nazwa': 'Rysowanie prostokąta o zadanych parametrach', 'call
            '11':  {'nazwa': 'Czy podana liczba jest podzielna przez 3, 5 i 7?', 'call': div_all.div_all_3},
            '12':  {'nazwa': 'Czy podany rok jest przestępny?', 'call': leap.leap},
            '13':  {'nazwa': 'Kalkulator wieku psa', 'call': dog.dog},
+           '14':  {'nazwa': 'Rysowanie tabeli z pliku Excel', 'call': data_import.data_import},
            'R':  {'nazwa': 'Zaskocz mnie :)', 'call': random_multi},
            'X':  {'nazwa': 'Wyjście z programu', 'call': exit_multi}
            }
