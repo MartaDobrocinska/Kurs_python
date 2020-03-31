@@ -13,6 +13,7 @@ import homework.homework_day04.divisible_by_all as div_all
 import homework.homework_day04.leap_year as leap
 import homework.homework_day04.dog as dog
 import homework.homework_day06.data_import as data_import
+import homework.homework_day06.txt_statistics as txt_statistics
 
 
 def exit_multi():
@@ -47,6 +48,7 @@ funkcje = {'1':  {'nazwa': 'Rysowanie prostokąta o zadanych parametrach', 'call
            '12':  {'nazwa': 'Czy podany rok jest przestępny?', 'call': leap.leap},
            '13':  {'nazwa': 'Kalkulator wieku psa', 'call': dog.dog},
            '14':  {'nazwa': 'Rysowanie tabeli z pliku Excel', 'call': data_import.data_import},
+           '15':  {'nazwa': 'Statystyka pliku tekstowego', 'call': txt_statistics.txt_statistics},
            'R':  {'nazwa': 'Zaskocz mnie :)', 'call': random_multi},
            'X':  {'nazwa': 'Wyjście z programu', 'call': exit_multi}
            }
