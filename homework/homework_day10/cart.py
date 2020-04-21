@@ -1,5 +1,5 @@
 from openpyxl import load_workbook
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 
 
 class Db(object):
@@ -15,7 +15,7 @@ class Db(object):
         self.products = {}
         for row in sheet.iter_rows(min_row=2,
                                    min_col=1,
-                                   max_col=9,
+                                   max_col=10,
                                    values_only=True):
             i_id = row[0]
             product = {
@@ -23,7 +23,8 @@ class Db(object):
                 "author": row[6],
                 "type": row[5],
                 "pages": row[7],
-                "quantity": row[4]
+                "quantity": row[4],
+                "price": row[9]
             }
             self.products[i_id] = product
         return self.products
@@ -74,6 +75,7 @@ class Item(Db):
         i_id = [1, 2, 3]
         item = items.get_items()[i_id]
         return item
+
 
     def price_gross(self):
         return self.price + self.price * (int(self.vat) / 100)
@@ -136,20 +138,20 @@ book_1 = Book(choice[1].get('quantity'),
               choice[1].get('title'),
               choice[1].get('author'),
               choice[1].get('pages'),
-              34.99)
+              25.99)
 
 book_2 = Book(choice[2].get('quantity'),
               choice[2].get('title'),
               choice[2].get('author'),
               choice[2].get('pages'),
-              51.99)
+              34.67)
 
 ebook_1 = Ebook(choice[3].get('quantity'),
                 choice[3].get('title'),
                 choice[3].get('author'),
                 choice[3].get('pages'),
-                15.79)
-# cart = Cart()
+                30.25)
+cart = Cart()
 # cart.add(book_1)
 
 app = Flask(__name__)
@@ -163,27 +165,24 @@ def main():
 
 @app.route("/product-list", methods=['POST', 'GET'])
 def product_list():
-    cart = Cart()
     print(request.method)
     if request.method == 'POST':
-        chosen = request.form.get('chosen')
+        chosen = request.form['chosen']
         if chosen == '1':
             cart.add(book_1)
         elif chosen == '2':
             cart.add(book_2)
         elif chosen == '3':
             cart.add(ebook_1)
-        else:
-            pass
     return render_template('product_list.html', choice=choice)
 
 
 @app.route("/cart", methods=['POST', 'GET'])
 def cart_items():
-    cart = Cart()
     items = f'''Ilość w koszyku: {len(cart)}\n
                         Wartość netto: {cart.nett} PLN\n
                         Wartość brutto: {cart.gross} PLN'''
+    items = items.replace('\n', '<br>')
     return render_template('cart.html', items=items)
 
 
