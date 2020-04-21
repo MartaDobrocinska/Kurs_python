@@ -3,33 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Strona główna</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-        p {
-            color: blue;
-            font-style: italic;
-            font-size: 16px;
-        }
-        a {
-            color: firebrick;
-            text-decoration: underline overline;
-        }
-        h1 {
-            display: block;
-            font-size: 18;
-            margin-top: 0.67em;
-            margin-bottom: 0.67em;
-            margin-left: 0;
-            margin-right: 0;
-            font-weight: bold;
-            color: midnightblue
-        }
-        table {
-        border-collapse: collapse;
-        }
-        table, th, td {
-        border: 1px solid black;
-        padding: 15px;
-        text-align: left;
+body {
+            padding-top: 10px;
+            padding-left: 10px;
         }
     </style>
 </head>
@@ -39,18 +18,24 @@
         <button type="button">
             Strona główna
         </button>
-    </a></br></br>
+    </a>
     <a href="/product-list">
         <button type="button">
             Lista produktów
         </button>
-    </a></br></br>
+    </a>
     <a href="/cart">
         <button type="button">
         Twój koszyk
         </button>
-    </a></br>
+    </a></br></br>
 <h1>Strona główna</h1>
+<p>Reading gives us someplace to go when we have to stay where we are. </p>
+<picture>
+  <source media="(min-width: 650px)"
+          srcset="https://booksandbao.com/wp-content/uploads/2019/09/alfons-morales-YLSwjSy7stw-unsplash-1600x938.jpg">
+  <img src="pic.jpg" alt="Bookstore" width="750" height="440">
+</picture>
 {% endblock %}
 </body>
 </html>

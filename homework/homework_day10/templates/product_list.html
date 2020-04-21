@@ -3,25 +3,25 @@
     <meta charset="UTF-8">
     <title>Lista produktów</title>
 </head>
-<body>
+<br>
 {% block menu %}
     <a href="/">
         <button type="button">
             Strona główna
         </button>
-    </a></br></br>
+    </a>
     <a href="/product-list">
         <button type="button">
             Lista produktów
         </button>
-    </a></br></br>
+    </a>
     <a href="/cart">
         <button type="button">
         Twój koszyk
         </button>
-    </a></br>
+    </a></br></br>
 <h1>Lista produktów</h1>
-<table>
+<table class="table table-striped">
         <tr>
                 <th>ID</th>
                 <th>Tytuł</th>
@@ -29,6 +29,7 @@
                 <th>Typ</th>
                 <th>Liczba stron</th>
                 <th>Dostępna ilość</th>
+                <th>Cena netto</th>
         </tr>
         {% for id, val in choice.items() %}
                 <tr>
@@ -38,13 +39,13 @@
                             {% endfor %}
                 </tr>
         {% endfor %}
-</table>
+</table></br></br>
 <p>
-    Który produkt dodać do koszyka?
+    Który produkt dodać do koszyka? Podaj ID
 </p>
     <form action="/product-list" method="post">
         <input type="text" name="chosen"/>
-        <input type="submit"/>
+        <input type="submit" value="Dodaj"/>
     </form>
 {% endblock %}
 </body>

@@ -9,19 +9,21 @@
         <button type="button">
             Strona główna
         </button>
-    </a></br></br>
+    </a>
     <a href="/product-list">
         <button type="button">
             Lista produktów
         </button>
-    </a></br></br>
+    </a>
     <a href="/cart">
         <button type="button">
         Twój koszyk
         </button>
-    </a></br>
+    </a></br></br>
 <h1>Twój koszyk</h1>
-{{items}}
+{% autoescape false %}
+    {{items}}
+{% endautoescape %}
 {% endblock %}
 </body>
 

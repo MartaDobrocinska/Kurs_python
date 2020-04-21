@@ -152,7 +152,6 @@ ebook_1 = Ebook(choice[3].get('quantity'),
                 choice[3].get('pages'),
                 30.25)
 cart = Cart()
-# cart.add(book_1)
 
 app = Flask(__name__)
 app.debug = True
