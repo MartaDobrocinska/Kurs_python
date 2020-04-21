@@ -149,8 +149,8 @@ ebook_1 = Ebook(choice[3].get('quantity'),
                 choice[3].get('author'),
                 choice[3].get('pages'),
                 15.79)
-cart = Cart()
-cart.add(book_1)
+# cart = Cart()
+# cart.add(book_1)
 
 app = Flask(__name__)
 app.debug = True
@@ -163,20 +163,24 @@ def main():
 
 @app.route("/product-list", methods=['POST', 'GET'])
 def product_list():
+    cart = Cart()
     print(request.method)
     if request.method == 'POST':
-        chosen_item = request.form["chosen"]
-        if chosen_item == 1:
+        chosen = request.form.get('chosen')
+        if chosen == '1':
             cart.add(book_1)
-        elif chosen_item == 2:
+        elif chosen == '2':
             cart.add(book_2)
-        elif chosen_item == 3:
+        elif chosen == '3':
             cart.add(ebook_1)
+        else:
+            pass
     return render_template('product_list.html', choice=choice)
 
 
 @app.route("/cart", methods=['POST', 'GET'])
 def cart_items():
+    cart = Cart()
     items = f'''Ilość w koszyku: {len(cart)}\n
                         Wartość netto: {cart.nett} PLN\n
                         Wartość brutto: {cart.gross} PLN'''

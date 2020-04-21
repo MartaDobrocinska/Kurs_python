@@ -2,14 +2,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista produktów</title>
-    <style>
-        table {
-        border-collapse: collapse;
-        }
-        table, th, td {
-        border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
 {% block menu %}
@@ -29,24 +21,30 @@
         </button>
     </a></br>
 <h1>Lista produktów</h1>
-<table class="centered thick-border">
+<table>
         <tr>
                 <th>ID</th>
-                <th>Produkt</th>
+                <th>Tytuł</th>
+                <th>Autor</th>
+                <th>Typ</th>
+                <th>Liczba stron</th>
+                <th>Dostępna ilość</th>
         </tr>
         {% for id, val in choice.items() %}
                 <tr>
                         <td>{{ id }}</td>
-                        <td>{{ val }}</td>
+                            {% for key, value in val.items() %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
                 </tr>
         {% endfor %}
 </table>
 <p>
-    "Który produkt dodać do koszyka?"
+    Który produkt dodać do koszyka?
 </p>
     <form action="/product-list" method="post">
         <input type="text" name="chosen"/>
-        <input type="submit" value="Wyślij"/>
+        <input type="submit"/>
     </form>
 {% endblock %}
 </body>
