@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Twój koszyk</title>
+</head>
+<body>
+{% block menu %}
+    <a href="/">
+        <button type="button">
+            Strona główna
+        </button>
+    </a></br></br>
+    <a href="/product-list">
+        <button type="button">
+            Lista produktów
+        </button>
+    </a></br></br>
+    <a href="/cart">
+        <button type="button">
+        Twój koszyk
+        </button>
+    </a></br>
+<h1>Twój koszyk</h1>
+{{items}}
+{% endblock %}
+</body>
+

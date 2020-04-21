@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <style>
+        p {
+            color: blue;
+            font-style: italic;
+            font-size: 16px;
+        }
+        a {
+            color: firebrick;
+            text-decoration: underline overline;
+        }
+        h1 {
+            display: block;
+            font-size: 18;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            color: midnightblue
+        }
+    </style>
+</head>
+<body>
+{% block menu %}
+    <a href="/">
+        <button type="button">
+            Strona główna
+        </button>
+    </a></br></br>
+    <a href="/product-list">
+        <button type="button">
+            Lista produktów
+        </button>
+    </a></br></br>
+    <a href="/cart">
+        <button type="button">
+        Twój koszyk
+        </button>
+    </a></br>
+<h1>Strona główna</h1>
+{% endblock %}
+</body>
+</html>
